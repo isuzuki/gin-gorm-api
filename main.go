@@ -12,6 +12,10 @@ func setupRouter() *gin.Engine {
 			"message": "pong",
 		})
 	})
+	r.GET("/item", func(c *gin.Context) {
+		item := &Item{1, "item1", "desc", "hidden1", "hidden2"}
+		c.JSON(http.StatusOK, item)
+	})
 	return r
 }
 
